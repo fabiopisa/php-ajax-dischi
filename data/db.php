@@ -1,4 +1,4 @@
-<!-- qua ho il mio array di disci .. quindi solo dati -->
+
 <?php
     $database = [
         [
