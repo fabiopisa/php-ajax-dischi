@@ -17,9 +17,13 @@
         <div class="logo"></div>
       </div>
       <div class="offset-7 col-1">
-        <select name="album" id="generis" placeholder="Generi">
-          <option>
-            Segli un genere
+        <select 
+        @change ="callApi"
+        v-model="strValGenre"
+        name="album" id="generis" placeholder="Generi">
+          <option value="all">Scegli un genere</option>
+          <option v-for="genre in arrGenres" :value="genre">
+            {{genre}}
           </option>
         </select>
       </div>
@@ -28,7 +32,7 @@
     <main class="d-flex">
       <section class="box-discs col-10 offset-1">
         <div
-        v-for="disc in arrDisc[0]"
+        v-for="disc in arrDisc"
         class="box-disco col-12 col-md-6 col-lg-2 p-4 m-0 p-lg-0 m-lg-3 text-center">
   
           <div class="box-background p-3">
